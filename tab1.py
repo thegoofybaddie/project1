@@ -45,7 +45,7 @@ def score():
 
     if s == 'GPA':
         box(df,'CLASS-GROUP','GPA',None)
-        histogram(df,'GPA',None,'PYTHON-CLASS')
+        box(df,'PYTHON-CLASS','GPA',None)
         histogram(df,'GPA',None,'GENDER')
         pie(df[df['GPA'] >= 6],'CLASS-GROUP','Tỉ lệ đậu lớp MC')
 

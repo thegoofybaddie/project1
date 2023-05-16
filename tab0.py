@@ -1,14 +1,10 @@
-import streamlit as st
-from dataframe import df
-
-
 def student_list():
     with st.container():
         col1,col2,col3,col4,col5 = st.columns(5)
         with col1:
             st.write('Giới tính')
-            nam = st.checkbox('Nam')
-            nu = st.checkbox('Nữ')
+            nam = st.checkbox('Nam',True)
+            nu = st.checkbox('Nữ',True)
             gender = []
             if nam:
                 gender.append('M')
@@ -69,8 +65,8 @@ def student_list():
         classes = []
         with col1b:
             
-            van_cl = st.checkbox('Văn')
-            toan_cl = st.checkbox('Toán')
+            van_cl = st.checkbox('Văn',True)
+            toan_cl = st.checkbox('Toán',True)
 
             if van_cl :
                 classes.append('10CV1')
@@ -82,8 +78,8 @@ def student_list():
                 for i in toan:
                     classes.append(i)
         with col2b:
-            ly_cl = st.checkbox('Lý')
-            hoa_cl = st.checkbox('Hóa')
+            ly_cl = st.checkbox('Lý',True)
+            hoa_cl = st.checkbox('Hóa',True)
 
             if ly_cl:
                 classes.append('10CL1')
@@ -94,8 +90,8 @@ def student_list():
 
         with col3b:
 
-            anh_cl = st.checkbox('Anh')
-            tin_cl = st.checkbox('Tin')
+            anh_cl = st.checkbox('Anh',True)
+            tin_cl = st.checkbox('Tin',True)
             if anh_cl:
                 anh = df[df['CLASS'].str.contains('CA')]['CLASS'].values
                 for i in anh:
@@ -105,8 +101,8 @@ def student_list():
      
         with col4b:
 
-            su_dia_cl = st.checkbox('Sử Địa')
-            trn_cl = st.checkbox('Trung Nhật')
+            su_dia_cl = st.checkbox('Sử Địa',True)
+            trn_cl = st.checkbox('Trung Nhật',True)
 
             if su_dia_cl:
                 classes.append('10CSD')
@@ -114,8 +110,8 @@ def student_list():
             if trn_cl:
                 classes.append('10CTRN')
         with col5b:
-            th_sn_cl = st.checkbox('TH/SN')
-            khac_cl = st.checkbox('Khác')
+            th_sn_cl = st.checkbox('TH/SN',True)
+            khac_cl = st.checkbox('Khác',True)
 
             if th_sn_cl:
                 th_sn = df[(df['CLASS'].str.contains('TH')) | (df['CLASS'].str.contains('SN'))]['CLASS'].values
